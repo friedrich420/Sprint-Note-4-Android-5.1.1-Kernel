@@ -4,6 +4,8 @@ obj-$(CONFIG_CPU_FREQ)			+= cpufreq.o freq_table.o
 obj-$(CONFIG_CPU_FREQ_STAT)             += cpufreq_stats.o
 # CPUfreq limit
 obj-$(CONFIG_CPU_FREQ_LIMIT)		+= cpufreq_limit.o
+# CPUfreq hardlimit
+obj-$(CONFIG_CPUFREQ_HARDLIMIT)         += cpufreq_hardlimit.o
 
 # CPUfreq governors 
 obj-$(CONFIG_CPU_FREQ_GOV_PERFORMANCE)	+= cpufreq_performance.o
@@ -24,8 +26,15 @@ obj-$(CONFIG_CPU_FREQ_GOV_NIGHTMARE)	+= cpufreq_nightmare.o
 obj-$(CONFIG_CPU_FREQ_GOV_DARKNESS)	+= cpufreq_darkness.o
 obj-$(CONFIG_CPU_FREQ_GOV_ALUCARD)	+= cpufreq_alucard.o
 obj-$(CONFIG_CPU_FREQ_GOV_CONSERVATIVEX) += cpufreq_conservativex.o
+<<<<<<< HEAD
 obj-$(CONFIG_CPU_FREQ_GOV_BLUACTIVE)	+= cpufreq_bluactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_PEGASUSQ)	+= cpufreq_pegasusq.o
+=======
+//obj-$(CONFIG_CPU_FREQ_GOV_ZZMOOVE)	+= cpufreq_zzmoove.o
+//obj-$(CONFIG_CPU_FREQ_GOV_LULZACTIVEQ) += cpufreq_lulzactiveq.o
+//obj-$(CONFIG_CPU_FREQ_GOV_PEGASUSQ)	+= cpufreq_pegasusq.o
+//obj-$(CONFIG_CPU_FREQ_GOV_ABYSSPLUGV2)	+= cpufreq_abyssplugv2.o
+>>>>>>> da633ea... Hardlimit thanks to @twistedumbrella
 obj-$(CONFIG_CPU_FREQ_GOV_INTELLIACTIVE)+= cpufreq_intelliactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_BIOSHOCK)	+= cpufreq_bioshock.o
 obj-$(CONFIG_CPU_FREQ_GOV_INTERACTIVE_PRO)	+= cpufreq_interactive_pro.o
