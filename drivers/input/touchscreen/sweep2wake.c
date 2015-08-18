@@ -191,15 +191,9 @@ static void detect_sweep2wake(int sweep_coord, int sweep_height, bool st)
                 }
             }
         }
-<<<<<<< HEAD
-        if (scr_suspended == true) {
-            /* s2s: left->right */
-            scr_on_touch = false;
-=======
         if (scr_suspended == false) {
             /* s2s: left->right */
             scr_on_touch = true;
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
             reverse_prev_coord = DEFAULT_S2W_X_B0;
             reverse_next_coord = DEFAULT_S2W_X_B3;
             if ((reverse_barrier[0] == true) ||
@@ -221,11 +215,7 @@ static void detect_sweep2wake(int sweep_coord, int sweep_height, bool st)
                             DEFAULT_S2W_Y_LIMIT)) {
                         if (sweep_coord > DEFAULT_S2W_X_B5) {
                             if (exec_count) {
-<<<<<<< HEAD
-                                pr_info(LOGTAG"ON\n");
-=======
                                 pr_info(LOGTAG"OFF\n");
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
                                 sweep2wake_pwrswitch();
                                 exec_count = false;
                             }
@@ -395,8 +385,6 @@ static ssize_t s2w_sweep2wake_dump(struct device *dev,
 
 static DEVICE_ATTR(sweep2wake, (S_IWUSR|S_IRUGO),
 	s2w_sweep2wake_show, s2w_sweep2wake_dump);
-<<<<<<< HEAD
-=======
 
 static ssize_t s2w_s2w_s2sonly_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
@@ -420,7 +408,6 @@ static ssize_t s2w_s2w_s2sonly_dump(struct device *dev,
 
 static DEVICE_ATTR(s2w_s2sonly, (S_IWUSR|S_IRUGO),
 	s2w_s2w_s2sonly_show, s2w_s2w_s2sonly_dump);
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
 
 static ssize_t s2w_version_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
@@ -444,19 +431,12 @@ static DEVICE_ATTR(sweep2wake_version, (S_IWUSR|S_IRUGO),
 /*
  * INIT / EXIT stuff below here
  */
-<<<<<<< HEAD
-//extern struct kobject *android_touch_kobj;
-struct kobject *android_touch_kobj;
-EXPORT_SYMBOL_GPL(android_touch_kobj);
-
-=======
 #ifdef ANDROID_TOUCH_DECLARED
 extern struct kobject *android_touch_kobj;
 #else
 struct kobject *android_touch_kobj;
 EXPORT_SYMBOL_GPL(android_touch_kobj);
 #endif
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
 static int __init sweep2wake_init(void)
 {
 	int rc = 0;
@@ -487,21 +467,6 @@ static int __init sweep2wake_init(void)
 	if (rc)
 		pr_err("%s: Failed to register s2w_input_handler\n", __func__);
     
-<<<<<<< HEAD
-    android_touch_kobj = kobject_create_and_add("android_touch", NULL) ;
-    if (android_touch_kobj == NULL) {
-        pr_warn("%s: android_touch_kobj create_and_add failed\n", __func__);
-    }
-    rc = sysfs_create_file(android_touch_kobj, &dev_attr_sweep2wake.attr);
-    if (rc) {
-        pr_warn("%s: sysfs_create_file failed for sweep2wake\n", __func__);
-    }
-    rc = sysfs_create_file(android_touch_kobj, &dev_attr_sweep2wake_version.attr);
-    if (rc) {
-        pr_warn("%s: sysfs_create_file failed for sweep2wake_version\n", __func__);
-    }
-=======
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
 
 #ifndef ANDROID_TOUCH_DECLARED
 	android_touch_kobj = kobject_create_and_add("android_touch", NULL) ;
@@ -509,8 +474,6 @@ static int __init sweep2wake_init(void)
 		pr_warn("%s: android_touch_kobj create_and_add failed\n", __func__);
 	}
 #endif
-<<<<<<< HEAD
-=======
 	rc = sysfs_create_file(android_touch_kobj, &dev_attr_sweep2wake.attr);
 	if (rc) {
 		pr_warn("%s: sysfs_create_file failed for sweep2wake\n", __func__);
@@ -530,7 +493,6 @@ static int __init sweep2wake_init(void)
 #ifdef CONFIG_HAS_EARLYSUSPEND
 	register_early_suspend(&s2w_early_suspend_handler);
 #endif
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
 
 err_input_dev:
 	input_free_device(sweep2wake_pwrdev);
@@ -542,13 +504,9 @@ err_alloc_dev:
 
 static void __exit sweep2wake_exit(void)
 {
-<<<<<<< HEAD
-    kobject_del(android_touch_kobj);
-=======
 #ifndef ANDROID_TOUCH_DECLARED
     kobject_del(android_touch_kobj);
 #endif
->>>>>>> a5218c5... Enabled sweep to wake in conjunction with sweep to slee [all the credits go to : pafcholini and emotion kernel team, ffolkes and the original creators]
 #ifdef CONFIG_POWERSUSPEND
 	unregister_power_suspend(&s2w_power_suspend_handler);
 #endif
