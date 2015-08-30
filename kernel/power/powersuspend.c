@@ -42,10 +42,7 @@
 bool flg_power_suspended = false;
 struct timeval time_power_suspended;
 struct timeval time_power_resumed;
-<<<<<<< HEAD
 
-=======
->>>>>>> 3407893... power: update flag, and save time of last suspend/resume
 struct workqueue_struct *suspend_work_queue;
 
 static DEFINE_MUTEX(power_suspend_lock);
