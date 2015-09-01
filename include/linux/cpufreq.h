@@ -260,12 +260,10 @@ struct cpufreq_driver {
 	unsigned int	(*get)	(unsigned int cpu);
 
 	/* optional */
-<<<<<<< HEAD
-=======
+
     unsigned int (*getavg)	(struct cpufreq_policy *policy,
                              unsigned int cpu);
 
->>>>>>> da633ea... Hardlimit thanks to @twistedumbrella
 	int	(*bios_limit)	(int cpu, unsigned int *limit);
 
 	int	(*exit)		(struct cpufreq_policy *policy);
@@ -544,8 +542,6 @@ extern struct cpufreq_governor cpufreq_gov_zzmoove;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMARTASSH3)
 extern struct cpufreq_governor cpufreq_gov_smartassH3;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_smartassH3)
-=======
->>>>>>> da633ea... Hardlimit thanks to @twistedumbrella
 #endif
 
 /*********************************************************************
