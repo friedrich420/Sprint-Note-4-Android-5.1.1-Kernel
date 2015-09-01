@@ -152,8 +152,5 @@ obj-$(CONFIG_SEC_BSP) += sec_bsp.o
 obj-$(CONFIG_SEC_THERMISTOR) += sec_thermistor.o apq8084-thermistor.o
 obj-$(CONFIG_BT_BCM4358) += board-bluetooth-bcm4358.o
 obj-$(CONFIG_GSM_MODEM_SPRD6500) += board-sprd6500-spi.o board-sprd6500-modems.o
-<<<<<<< HEAD
-=======
 obj-$(CONFIG_MSM_CPUFREQ_LIMIT) += cpufreq_limit.o
 obj-$(CONFIG_FORCE_FAST_CHARGE) += fastchg.o
->>>>>>> 7946301...  OC CPU @2.89 and UC @268 thanks to @twistedumbrella and ktoonsez

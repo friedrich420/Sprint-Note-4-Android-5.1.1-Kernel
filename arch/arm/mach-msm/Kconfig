@@ -1007,19 +1007,13 @@ config MSM_DEVFREQ_CPUBW
 	  agnostic interface to so that some of the devfreq governors can be
 	  shared across SoCs.
 
-<<<<<<< HEAD
 config CPU_VOLTAGE_TABLE
 	bool "Enable CPU Voltage Table via sysfs for adjustements"
-=======
+
 config MSM_CPUFREQ_LIMIT
  	tristate "MSM CPU frequency limiter"
  	default n
  	help
-
-config FORCE_FAST_CHARGE
-	bool "Force fast charging (AC/USB) by Yank555.lu"
->>>>>>> 7946301...  OC CPU @2.89 and UC @268 thanks to @twistedumbrella and ktoonsez
-	default n
 
 config CPU_VOLTAGE_CONTROL
 	bool "Userspace CPU Voltage Control"
