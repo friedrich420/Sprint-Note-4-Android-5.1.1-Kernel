@@ -1,0 +1,1 @@
+cmd_arch/arm/boot/compressed/piggy.xzkern := (cat arch/arm/boot/compressed/../Image | sh /home/friedrich420/kernel/note4/KernelN910P-5_1_1SOURCE4_LINUXUPDATES/scripts/xz_wrap.sh && printf \\200\\200\\137\\001) > arch/arm/boot/compressed/piggy.xzkern || (rm -f arch/arm/boot/compressed/piggy.xzkern ; false)

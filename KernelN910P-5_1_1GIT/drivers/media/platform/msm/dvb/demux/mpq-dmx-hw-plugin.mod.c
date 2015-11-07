@@ -1,0 +1,128 @@
+#include <linux/module.h>
+#include <linux/vermagic.h>
+#include <linux/compiler.h>
+
+MODULE_INFO(vermagic, VERMAGIC_STRING);
+
+struct module __this_module
+__attribute__((section(".gnu.linkonce.this_module"))) = {
+	.name = KBUILD_MODNAME,
+	.init = init_module,
+#ifdef CONFIG_MODULE_UNLOAD
+	.exit = cleanup_module,
+#endif
+	.arch = MODULE_ARCH_INIT,
+};
+
+MODULE_INFO(intree, "Y");
+
+static const struct modversion_info ____versions[]
+__used
+__attribute__((section("__versions"))) = {
+	{ 0x2790ccd3, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x88ce27bb, __VMLINUX_SYMBOL_STR(tspp_close_stream) },
+	{ 0x344908d4, __VMLINUX_SYMBOL_STR(dvb_ringbuffer_free) },
+	{ 0xf85eccaf, __VMLINUX_SYMBOL_STR(mpq_streambuffer_data_avail) },
+	{ 0xde23661f, __VMLINUX_SYMBOL_STR(mpq_streambuffer_flush) },
+	{ 0xc5e9c169, __VMLINUX_SYMBOL_STR(ion_import_dma_buf) },
+	{ 0x3656cb10, __VMLINUX_SYMBOL_STR(dvb_ringbuffer_init) },
+	{ 0xe5537383, __VMLINUX_SYMBOL_STR(mpq_streambuffer_get_data_rw_offset) },
+	{ 0x989bb472, __VMLINUX_SYMBOL_STR(mpq_streambuffer_terminate) },
+	{ 0xc11b7e97, __VMLINUX_SYMBOL_STR(mpq_streambuffer_init) },
+	{ 0xe6da44a, __VMLINUX_SYMBOL_STR(set_normalized_timespec) },
+	{ 0xab9db7cb, __VMLINUX_SYMBOL_STR(ion_unmap_kernel) },
+	{ 0x528c709d, __VMLINUX_SYMBOL_STR(simple_read_from_buffer) },
+	{ 0x5fc56a46, __VMLINUX_SYMBOL_STR(_raw_spin_unlock) },
+	{ 0xf22ec8b9, __VMLINUX_SYMBOL_STR(debugfs_create_dir) },
+	{ 0xd6ee688f, __VMLINUX_SYMBOL_STR(vmalloc) },
+	{ 0x1a7fe83c, __VMLINUX_SYMBOL_STR(tspp_allocate_buffers) },
+	{ 0x15692c87, __VMLINUX_SYMBOL_STR(param_ops_int) },
+	{ 0xd912e451, __VMLINUX_SYMBOL_STR(dvb_dmx_init) },
+	{ 0x171efd85, __VMLINUX_SYMBOL_STR(mpq_streambuffer_pkt_dispose) },
+	{ 0x29d66117, __VMLINUX_SYMBOL_STR(mpq_streambuffer_metadata_free) },
+	{ 0xc8b57c27, __VMLINUX_SYMBOL_STR(autoremove_wake_function) },
+	{ 0x52a52336, __VMLINUX_SYMBOL_STR(tspp_get_ref_clk_counter) },
+	{ 0x6be32c9f, __VMLINUX_SYMBOL_STR(dvb_dmx_swfilter_packet) },
+	{ 0x34184afe, __VMLINUX_SYMBOL_STR(current_kernel_time) },
+	{ 0x4863f57b, __VMLINUX_SYMBOL_STR(tspp_remove_filter) },
+	{ 0xa643ae93, __VMLINUX_SYMBOL_STR(tspp_unregister_notification) },
+	{ 0x12b629d9, __VMLINUX_SYMBOL_STR(tspp_open_channel) },
+	{ 0x6f189d7a, __VMLINUX_SYMBOL_STR(ion_free) },
+	{ 0x123ba832, __VMLINUX_SYMBOL_STR(mpq_streambuffer_data_write) },
+	{ 0xf087137d, __VMLINUX_SYMBOL_STR(__dynamic_pr_debug) },
+	{ 0xb642480, __VMLINUX_SYMBOL_STR(dvb_dmx_get_pattern) },
+	{ 0xead782da, __VMLINUX_SYMBOL_STR(ion_handle_get_size) },
+	{ 0xd5152710, __VMLINUX_SYMBOL_STR(sg_next) },
+	{ 0xda419856, __VMLINUX_SYMBOL_STR(mutex_unlock) },
+	{ 0x999e8297, __VMLINUX_SYMBOL_STR(vfree) },
+	{ 0xe9c24300, __VMLINUX_SYMBOL_STR(mpq_adapter_unregister_stream_if) },
+	{ 0x136d88ec, __VMLINUX_SYMBOL_STR(debugfs_create_file) },
+	{ 0x5b77041c, __VMLINUX_SYMBOL_STR(kthread_create_on_node) },
+	{ 0x63e5e977, __VMLINUX_SYMBOL_STR(tspp_open_stream) },
+	{ 0x3276f6d2, __VMLINUX_SYMBOL_STR(mpq_adapter_get) },
+	{ 0x275ef902, __VMLINUX_SYMBOL_STR(__init_waitqueue_head) },
+	{ 0x27a9dc4, __VMLINUX_SYMBOL_STR(debugfs_create_u32) },
+	{ 0xfae5e5ec, __VMLINUX_SYMBOL_STR(mpq_adapter_get_stream_if) },
+	{ 0x907a28f9, __VMLINUX_SYMBOL_STR(msm_ion_do_cache_op) },
+	{ 0xfa2a45e, __VMLINUX_SYMBOL_STR(__memzero) },
+	{ 0x7f4f78a9, __VMLINUX_SYMBOL_STR(tspp_register_notification) },
+	{ 0x5f754e5a, __VMLINUX_SYMBOL_STR(memset) },
+	{ 0x4516a43a, __VMLINUX_SYMBOL_STR(dvbdmx_ts_reset_pes_state) },
+	{ 0x7a63e42f, __VMLINUX_SYMBOL_STR(ion_share_dma_buf_fd) },
+	{ 0xba05683b, __VMLINUX_SYMBOL_STR(ion_map_kernel) },
+	{ 0x14985172, __VMLINUX_SYMBOL_STR(dvb_dmxdev_release) },
+	{ 0x29058320, __VMLINUX_SYMBOL_STR(mutex_lock_interruptible) },
+	{ 0xf4fb2aa4, __VMLINUX_SYMBOL_STR(__mutex_init) },
+	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
+	{ 0x20c55ae0, __VMLINUX_SYMBOL_STR(sscanf) },
+	{ 0x342c9ba7, __VMLINUX_SYMBOL_STR(kthread_stop) },
+	{ 0x30c9abf1, __VMLINUX_SYMBOL_STR(mpq_streambuffer_pkt_write) },
+	{ 0x5bd39a74, __VMLINUX_SYMBOL_STR(dvb_dmx_video_pattern_search) },
+	{ 0xd088162e, __VMLINUX_SYMBOL_STR(tspp_add_filter) },
+	{ 0xe970ef5f, __VMLINUX_SYMBOL_STR(ion_handle_get_flags) },
+	{ 0xcc9d4a4, __VMLINUX_SYMBOL_STR(mutex_lock) },
+	{ 0xe9462a98, __VMLINUX_SYMBOL_STR(dvb_dmx_swfilter_format) },
+	{ 0x1428d809, __VMLINUX_SYMBOL_STR(fput) },
+	{ 0x802d82d0, __VMLINUX_SYMBOL_STR(dvb_dmx_release) },
+	{ 0x22df9a07, __VMLINUX_SYMBOL_STR(ion_alloc) },
+	{ 0xf48116c6, __VMLINUX_SYMBOL_STR(dvb_ringbuffer_read) },
+	{ 0x40a9b349, __VMLINUX_SYMBOL_STR(vzalloc) },
+	{ 0xe06ffa03, __VMLINUX_SYMBOL_STR(dvb_dmx_notify_section_event) },
+	{ 0x730a0aa2, __VMLINUX_SYMBOL_STR(tspp_close_channel) },
+	{ 0xaa1983b1, __VMLINUX_SYMBOL_STR(tspp_get_buffer) },
+	{ 0xf0fdf6cb, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
+	{ 0x1000e51, __VMLINUX_SYMBOL_STR(schedule) },
+	{ 0x636625, __VMLINUX_SYMBOL_STR(mpq_adapter_register_stream_if) },
+	{ 0xc09978d4, __VMLINUX_SYMBOL_STR(ion_sg_table) },
+	{ 0xf9d5b27, __VMLINUX_SYMBOL_STR(dvb_ringbuffer_avail) },
+	{ 0xf05120d1, __VMLINUX_SYMBOL_STR(mpq_streambuffer_get_buffer_handle) },
+	{ 0x56858989, __VMLINUX_SYMBOL_STR(tspp_release_buffer) },
+	{ 0x81666ba4, __VMLINUX_SYMBOL_STR(wake_up_process) },
+	{ 0x2776630a, __VMLINUX_SYMBOL_STR(qseecom_send_command) },
+	{ 0x8a5727d7, __VMLINUX_SYMBOL_STR(mpq_streambuffer_data_free) },
+	{ 0x9c0bd51f, __VMLINUX_SYMBOL_STR(_raw_spin_lock) },
+	{ 0xd85cd67e, __VMLINUX_SYMBOL_STR(__wake_up) },
+	{ 0xb3f7646e, __VMLINUX_SYMBOL_STR(kthread_should_stop) },
+	{ 0x44366cfc, __VMLINUX_SYMBOL_STR(simple_write_to_buffer) },
+	{ 0x267706d8, __VMLINUX_SYMBOL_STR(ion_phys) },
+	{ 0x9d669763, __VMLINUX_SYMBOL_STR(memcpy) },
+	{ 0x499cb58c, __VMLINUX_SYMBOL_STR(prepare_to_wait) },
+	{ 0x2903ddac, __VMLINUX_SYMBOL_STR(mpq_streambuffer_data_write_deposit) },
+	{ 0x7118ed56, __VMLINUX_SYMBOL_STR(fget) },
+	{ 0xf9e73082, __VMLINUX_SYMBOL_STR(scnprintf) },
+	{ 0x26714f2f, __VMLINUX_SYMBOL_STR(ion_client_destroy) },
+	{ 0x1cfb04fa, __VMLINUX_SYMBOL_STR(finish_wait) },
+	{ 0xefd6cf06, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr0) },
+	{ 0x8f678b07, __VMLINUX_SYMBOL_STR(__stack_chk_guard) },
+	{ 0xfac72b5a, __VMLINUX_SYMBOL_STR(qseecom_start_app) },
+	{ 0xb81960ca, __VMLINUX_SYMBOL_STR(snprintf) },
+	{ 0xaf62a7c2, __VMLINUX_SYMBOL_STR(qseecom_shutdown_app) },
+	{ 0xe2425d18, __VMLINUX_SYMBOL_STR(msm_ion_client_create) },
+	{ 0xe0a6e5ae, __VMLINUX_SYMBOL_STR(dvb_dmxdev_init) },
+};
+
+static const char __module_depends[]
+__used
+__attribute__((section(".modinfo"))) =
+"depends=tspp,mpq-adapter";
+

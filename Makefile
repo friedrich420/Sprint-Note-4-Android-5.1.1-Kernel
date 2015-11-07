@@ -1,6 +1,6 @@
 VERSION = 3
 PATCHLEVEL = 10
-SUBLEVEL = 40
+SUBLEVEL = 89
 EXTRAVERSION =
 NAME = TOSSUG Baby Fish
 
@@ -194,13 +194,8 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # "make" in the configured kernel build directory always uses that.
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
-<<<<<<< HEAD
 ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?= /home/friedrich420/kernel/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4-2015.06/bin/arm-cortex_a15-linux-gnueabihf-
-=======
-ARCH		?= arm
-CROSS_COMPILE	?= /home/friedrich420/kernel/hyper-linaro-arm-eabi-5.1/bin/arm-eabi-
->>>>>>> dfe23f6... GCC 5.1 Compilation Fixes and Switch to Hyper Linaro arm-eabi 5.1
+CROSS_COMPILE	?= /home/friedrich420/kernel/arm-eabi-5.2-A15/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -668,9 +663,6 @@ endif
 # arch Makefile may override CC so keep this after arch Makefile is included
 NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
 CHECKFLAGS     += $(NOSTDINC_FLAGS)
-
-# warn about C99 declaration after statement
-KBUILD_CFLAGS += $(call cc-option,-Wdeclaration-after-statement,)
 
 # disable pointer signed / unsigned warnings in gcc 4.0
 KBUILD_CFLAGS += $(call cc-disable-warning, pointer-sign)

@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-msm/dma_test.ko := /home/friedrich420/kernel/arm-eabi-5.2-A15/bin/arm-eabi-ld -EL -r  -T /home/friedrich420/kernel/note4/KernelN910P-5_1_1SOURCE4_LINUXUPDATES/scripts/module-common.lds --build-id  -o arch/arm/mach-msm/dma_test.ko arch/arm/mach-msm/dma_test.o arch/arm/mach-msm/dma_test.mod.o
