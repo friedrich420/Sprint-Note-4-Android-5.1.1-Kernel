@@ -1,0 +1,29 @@
+--- drivers/usb/host/xhci-ring.c
++++ drivers/usb/host/xhci-ring.c
+@@ -3376,7 +3398,6 @@
+ 		num_trbs++;
+ 		running_total += TRB_MAX_BUFF_SIZE;
+ 	}
+-	/* FIXME: this doesn't deal with URB_ZERO_PACKET - need one more */
+ 
+ 	ret = prepare_transfer(xhci, xhci->devs[slot_id],
+ 			ep_index, urb->stream_id,
+@@ -3437,12 +3472,15 @@
+ 		/* Chain all the TRBs together; clear the chain bit in the last
+ 		 * TRB to indicate it's the last TRB in the chain.
+ 		 */
+-		if (num_trbs > 1) {
++		if (num_trbs > last_trb_num) {
+ 			field |= TRB_CHAIN;
+-		} else {
+-			/* FIXME - add check for ZERO_PACKET flag before this */
++		} else if (num_trbs == last_trb_num) {
+ 			td->last_trb = ep_ring->enqueue;
+ 			field |= TRB_IOC;
++		} else if (zero_length_needed && num_trbs == 1) {
++			trb_buff_len = 0;
++			urb_priv->td[1]->last_trb = ep_ring->enqueue;
++			field |= TRB_IOC;
+ 		}
+ 
+ 		/* Only set interrupt on short packet for IN endpoints */
